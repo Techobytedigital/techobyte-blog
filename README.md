@@ -19,6 +19,11 @@ You will need:
       - 1vCPU
       - 25GB disk
     - Cost: $5/mo
+- Certbot
+  - I was not able to get certbot running in a container for this project.
+  - Once you've provisioned a machine to host the stack (i.e. a DigitalOcean droplet), the `initial-setup.sh` script will help you install and configure Certbot.
+    - Note: The `initial-setup.sh` script was written for Debian hosts. I will update it for Ubuntu eventually.
+
 
 ### How to convert this repository into your own Ghost site
 
