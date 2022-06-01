@@ -135,13 +135,13 @@ function script_finish () {
         echo ".env already exists. Don't forget to edit this file!"
     fi
 
-    if [[ ! -f ./container_data/nginx/blog.conf ]]; then
-        cp ./container_data/nginx/blog.conf.example ./container_data/nginx/blog.conf
-        echo "./container_data/nginx/blog.conf.example copied to blog.conf. Don't forget to edit this file!"
-    else
-        echo ""
-        echo "./container_data/nginx/blog.conf already exists. Don't forget to edit this file!"
-    fi
+    # if [[ ! -f ./container_data/nginx/blog.conf ]]; then
+    #     cp ./container_data/nginx/blog.conf.example ./container_data/nginx/blog.conf
+    #     echo "./container_data/nginx/blog.conf.example copied to blog.conf. Don't forget to edit this file!"
+    # else
+    #     echo ""
+    #     echo "./container_data/nginx/blog.conf already exists. Don't forget to edit this file!"
+    # fi
 
     echo ""
     echo "Once you edit the files above, run the stack with $>docker-compose up -d"
