@@ -12,7 +12,7 @@ container_data/ghost/*
 
 # Ignore nginx dir
 container_data/nginx/*
-!container_data/nginx/blog.conf.example
+!container_data/nginx/blog.conf
 
 # Ignore db
 container_data/db/

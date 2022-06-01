@@ -1,3 +1,9 @@
+# Description
+
+This is the repository for the Techobyte web blog, a Ghost app running in docker-compose with an NGINX proxy and SSL. This was set up on a DigitalOcean droplet running Debian.
+
+The `initial-setup.sh`script sets the environment up on a new host when cloning the repository. Read [instructions](#instructions) below when setting up on a new host.
+
 # Instructions
 
 After cloning the repository, run `$>./initial-setup.sh`. The script will ask you for an email and a domain name; whatever domain name you use here, use in `.env` and `container_data/nginx/blog.conf` (notes on this below)
@@ -18,3 +24,4 @@ Once the script is finished, you will need to edit 2 files:
 ## Links
 
 - [How I run my Ghost blog on Docker, with Nginx & MariaDB](https://myedes.io/ghost-on-docker/)
+  - [Companion github repo for blog post](https://github.com/mehyedes/docker-ghost)
