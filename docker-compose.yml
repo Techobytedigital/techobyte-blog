@@ -10,9 +10,8 @@ services:
       - ${NGINX_HTTP_PORT:-80}:80
       - ${NGINX_HTTPS_PORT:-443}:443
     volumes:
-      - type: bind
-        source: ${NGINX_DATA_DIR:-./container_data/nginx}
-        target: /etc/nginx/conf.d/
+      - ${NGINX_CONF_DIR:-./container_data/nginx/conf}:/etc/nginx/conf.d/
+      - ${NGINX_LOG_DIR:-./container_data/logs/nginx}:/var/log/nginx
 
   blog:
     container_name: techobyte-blog
@@ -21,15 +20,13 @@ services:
     ports:
       - ${GHOST_WEB_PORT:-8080}:2368
     volumes:
-      - type: bind
-        source: ${GHOST_CONTENT_DIR:-./container_data/ghost}
-        target: /var/lib/ghost/content
+      - ${GHOST_CONTENT_DIR:-./container_data/ghost}:/var/lib/ghost/content
     environment:
       # see https://ghost.org/docs/config/#configuration-options
       database__client: mysql
       database__connection__host: blog-db
       database__connection__user: root
-      database__connection__password: ${GHOST_DB_ROOT_PASSWD:}
+      database__connection__password: ${GHOST_DB_ROOT_PASSWD:-ghost}
       database__connection__database: ${GHOST_DB_NAME:-ghost}
       url: ${GHOST_BLOG_URL:-http://127.0.0.1}
       # EMAIL CONFIGURATION
@@ -45,16 +42,14 @@ services:
 
   blog-db:
     container_name: techobyte-blog_db
-    image: mariadb:${MARIADB_IMAGE_VER:-10.8-jammy}
+    image: mariadb:${MARIADB_IMAGE_VER}
     restart: unless-stopped
     volumes:
-      - type: bind
-        source: ${MARIADB_DATA_DIR:-./container_data/db}
-        target: /var/lib/mysql
+      - ${MARIADB_DATA_DIR:-./container_data/db}:/var/lib/mysql
     # ports:
     #   - ${MARIADB_PORT:-3306}:3306
     environment:
-      MYSQL_ROOT_PASSWORD: ${GHOST_DB_ROOT_PASSWD}
+      MYSQL_ROOT_PASSWORD: ${GHOST_DB_ROOT_PASSWD:-ghost}
       MYSQL_DATABASE: ${GHOST_DB_NAME}
       MYSQL_USER: ghost
       MYSQL_PASSWORD: ${GHOST_DB_PASSWD:-ghost}

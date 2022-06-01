@@ -1,36 +1,37 @@
 server {
-    listen 80;
-    # Change example.com to your domain/URL
-	server_name example.com;
-    server_tokens off;
-    # Set file upload limit
+	listen 80;
+    # Handle all hostnames as HTTPS
+	server_name _;
+    # Disable NGINX server info (i.e. on error screens)
+	server_tokens off;
+
+    # Set max file upload size
     client_max_body_size 500M;
 
+    # Redirect requests to HTTPS
 	location / {
-        return 301 https://$server_name$request_uri;
-	}
+		return 301 https://$server_name$request_uri;
+	}	
 }
 
 server {
-    listen 443 ssl;
-    server_name example.com;
-    # Hide NGINX build details (version, etc) in headers
-    server_tokens off;
-    # Set file upload limit
-    client_max_body_size 500M;
+    # Handle all hostnames as HTTPS
+	server_name _;
+    # Serve SSL over port 443
+	listen 443 ssl;
+    # Disable NGINX server info (i.e. on error screens)
+	server_tokens off;
 
-    location / {
-        # Proxy requests to Ghost Docker over SSL
-        proxy_pass http://blog:2368;
-            # Don't change request's real IP
-            proxy_set_header X-Real-IP $remote_addr;
-            # Don't change request's real HOST
-            proxy_set_header Host $http_host;
-        proxy_set_header X-Forwarded-Proto https;
-            # Don't change request client's headers when proxying
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    }
-    # Specify server's SSL certificate & key inside Docker container
-    ssl_certificate /etc/nginx/conf.d/ssl/fullchain.pem;
-    ssl_certificate_key /etc/nginx/conf.d/ssl/privkey.pem;
+    # Proxy pass all requests to the blog container
+	location / {
+		proxy_pass	http://blog:2368;
+	        proxy_set_header    X-Real-IP $remote_addr;
+	        proxy_set_header    Host      $host;
+		proxy_set_header X-Forwarded-Proto $scheme;
+	        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+	}
+
+    # Set locations for SSL cert files
+	ssl_certificate     /etc/nginx/conf.d/ssl/fullchain.pem;
+	ssl_certificate_key 	/etc/nginx/conf.d/ssl/privkey.pem;
 }
