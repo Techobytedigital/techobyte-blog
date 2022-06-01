@@ -1,0 +1,17 @@
+**/.env
+
+!**/*.example
+!**/*example_*
+!**/*example_*.*
+!**/_example
+!**/_example.*
+
+# Ignore ghost directory
+container_data/ghost/
+
+# Ignore nginx dir
+container_data/nginx/*
+!container_data/nginx/blog.conf.example
+
+# Ignore db
+container_data/db/
