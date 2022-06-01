@@ -7,7 +7,8 @@
 !**/_example.*
 
 # Ignore ghost directory
-container_data/ghost/
+container_data/ghost/*
+!container_data/ghost/themes/
 
 # Ignore nginx dir
 container_data/nginx/*
