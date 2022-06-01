@@ -1,0 +1,87 @@
+{
+  "name": "biron",
+  "description": "Minimal & Clean Ghost Blog Theme",
+  "demo": "https://biron.bironthemes.com",
+  "version": "3.0.0",
+  "engines": {
+    "ghost": ">=4.0.0",
+    "ghost-api": "v4"
+  },
+  "author": {
+    "name": "Biron Themes",
+    "email": "bironthemes@gmail.com",
+    "url": "https://bironthemes.com"
+  },
+  "gpm": {
+    "type": "theme",
+    "categories": [
+      "Personal Blog",
+      "Minimal",
+      "Clean"
+    ]
+  },
+  "keywords": [
+    "ghost",
+    "theme",
+    "ghost-theme"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "browser-sync": "^2.26.13",
+    "cssnano": "^5.0.7",
+    "fs": "0.0.1-security",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-notify": "^4.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.1.3",
+    "gulp-sass": "^5.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-util": "^3.0.8",
+    "path": "^0.12.7",
+    "pixrem": "^5.0.0",
+    "postcss-color-rgba-fallback": "^4.0.0",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-discard-comments": "^5.0.1",
+    "postcss-opacity": "^5.0.0",
+    "postcss-pseudoelements": "^5.0.0",
+    "postcss-vmin": "^3.0.0",
+    "postcss-will-change": "^4.0.1",
+    "postcss-zindex": "^5.0.1",
+    "sass": "^1.36.0"
+  },
+  "dependencies": {
+    "bulma": "^0.9.3",
+    "feather-icons": "^4.22.1",
+    "fitvids": "^2.0.0",
+    "lazysizes": "^5.3.2"
+  },
+  "config": {
+    "posts_per_page": 12,
+    "image_sizes": {
+      "xxs": {
+        "width": 30
+      },
+      "xs": {
+        "width": 100
+      },
+      "s": {
+        "width": 300
+      },
+      "m": {
+        "width": 600
+      },
+      "l": {
+        "width": 1000
+      },
+      "xl": {
+        "width": 2000
+      }
+    }
+  }
+}
