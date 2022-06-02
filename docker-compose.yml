@@ -1,5 +1,11 @@
 version: '3.3'
 
+networks:
+  # Change this if you used a different network name
+  #   when running manage.sh
+  techobyte:
+    external: true
+
 services:
 
   nginx:
@@ -46,8 +52,6 @@ services:
     restart: unless-stopped
     volumes:
       - ${MARIADB_DATA_DIR:-./container_data/db}:/var/lib/mysql
-    # ports:
-    #   - ${MARIADB_PORT:-3306}:3306
     environment:
       MYSQL_ROOT_PASSWORD: ${GHOST_DB_ROOT_PASSWD:-ghost}
       MYSQL_DATABASE: ${GHOST_DB_NAME}
