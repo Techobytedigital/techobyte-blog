@@ -20,7 +20,7 @@ services:
       - ${NGINX_LOG_DIR:-./container_data/logs/nginx}:/var/log/nginx
 
   blog:
-    container_name: techobyte-blog
+    container_name: ${GHOST_BLOG_CONTAINER_NAME:-techobyte-blog}
     image: ghost:${GHOST_IMAGE_VER}
     restart: unless-stopped
     ports:
@@ -55,5 +55,5 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ${GHOST_DB_ROOT_PASSWD:-ghost}
       MYSQL_DATABASE: ${GHOST_DB_NAME}
-      MYSQL_USER: ghost
+      MYSQL_USER: ${GHOST_DB_USER:-ghost}
       MYSQL_PASSWORD: ${GHOST_DB_PASSWD:-ghost}

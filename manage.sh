@@ -2,6 +2,18 @@
 
 project_root="${PWD}"
 
+# Options: DEBUG, INFO
+DEBUG_LEVEL="DEBUG"
+
+function print_debug() {
+
+    if [[ $DEBUG_LEVEL == "DEBUG" ]]; then
+        echo ""
+        echo "[DEBUG] $1"
+    fi
+
+}
+
 function firstrun_check() {
 
     echo ""
@@ -140,6 +152,8 @@ function main() {
     for arg in "${@}"; do
         echo "[DEBUG] Arg: $arg"
 
+        env_file=""
+
         case $arg in
         -init | --initial-setup)
             echo ""
@@ -147,6 +161,30 @@ function main() {
             echo ""
 
             firstrun
+            ;;
+        -b | --backup)
+
+            if [[ "$env_file" == "" ]]; then
+                echo ""
+                echo "No env file detected. Using $project_root/.env"
+                echo ""
+
+                env_file="$project_root/.env"
+            fi
+
+            if [[ "$backup_dir" == "" ]]; then
+                echo ""
+                echo "No backup directory specified. Defaulting to $project_root/backup"
+                echo ""
+
+                backup_dir=$project_root/backup
+            fi
+
+            . scripts/backup.sh -b -e=$env_file --backup-directory=$backup_dir
+            ;;
+        -e=* | --env-file=*)
+            env_file="${arg#*=}"
+            print_debug "env_file: $env_file"
             ;;
         *)
             echo "Invalid option: $arg"
