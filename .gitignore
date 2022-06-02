@@ -14,7 +14,13 @@ container_data/ghost/*
 
 # Ignore nginx dir
 container_data/nginx/*
-!container_data/nginx/blog.conf
+container_data/nginx/conf/*
+
+!container_data/nginx/conf
+!container_data/nginx/conf/blog.conf
 
 # Ignore db
 container_data/db/
+
+# Ignore logs
+container_data/logs
