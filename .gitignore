@@ -1,4 +1,6 @@
 **/.env
+**/*.bak
+**/*.tmp
 
 !**/*.example
 !**/*example_*
