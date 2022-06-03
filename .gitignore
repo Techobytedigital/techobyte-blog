@@ -24,3 +24,6 @@ container_data/db/
 
 # Ignore logs
 container_data/logs
+
+# Ignore backups
+backup/

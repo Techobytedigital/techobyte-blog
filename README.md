@@ -47,6 +47,10 @@ After cloning the repository, run `$>./manage.sh` with no arguments; this will a
 
 If this is your first time running the script, it will ask you for a domain name, email address, and docker network; whatever domain name you use here, use in `.env` and `container_data/nginx/blog.conf` (notes on this below).
 
+## manage.sh script instructions
+
+- Ghost backup ([container](https://hub.docker.com/r/bennetimo/ghost-backup/))
+
 **What does the script do with the values you enter?**
 
 - `domain name`
