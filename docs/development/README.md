@@ -8,6 +8,7 @@ Instructions & resources to help with building the site.
 - [Add pages to navigation](#add-pages-to-navigation)
 - [Change codefence syntax highlighting theme](#change-codefence-syntax-highlighting-theme)
 - [Fix theme install 'already exists' error](#fix-theme-install-already-exists-error)
+- [Update themes installed as git submodules](#update-themes-installed-as-git-submodules)
 
 ## Create new post
 
@@ -138,3 +139,7 @@ rm -rf .git/modules/themes/$THEME_NAME
 ```
 
 Then, try re-running your `git submodule add` command.
+
+## Update themes installed as git submodules
+
+From your `site/` directory (wherever your `hugo.toml`/`config.yml` is), run `git submodule update --remote --merge`
