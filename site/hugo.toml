@@ -1,8 +1,111 @@
 baseURL = 'https://techobyte.cc/'
 languageCode = 'en-us'
-title = 'Techcobyte'
+title = 'Techobyte'
 
-theme = "PaperMod"
+theme = "PaperModX"
+
+pygmentsUseClasses = true
+
+[minify]
+disableXML = true
+minifyOutput = true
+
+[params]
+# env = "production"
+title = "techobyte blog"
+## Options: auto, light, dark
+defaultTheme = "auto"
+description = "Articles, guides, tips & tricks, for a range of technology topics."
+keywords = [
+    "blog",
+    "technology",
+    "bash",
+    "powershell",
+    "python",
+    "wsl",
+    "proxmox",
+    "linux",
+    "windows",
+    "selfhost",
+    "selfhosting",
+    "selfhosted",
+]
+author = "Techobyte Digital"
+DateFormat = "January 2, 2006"
+disableThemeToggle = false
+ShowReadingTimee = true
+ShowShareButtons = true
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = true
+disableSpecial1stPost = false
+disableScrollToTop = false
+comments = false
+hidemeta = false
+hideSummary = false
+showtoc = false
+tocopen = false
+
+# [params.assets]
+# favicon = "<link / abs url>"
+# favicon16x16 = "<link / abs url>"
+# favicon32x32 = "<link / abs url>"
+# apple_touch_icon = "<link / abs url>"
+# safari_pinned_tab = "<link / abs url>"
+
+# [params.label]
+# text = "Home"
+# icon = "/apple-touch-icon.png"
+# iconHeight = 35
+
+# [params.profileMode]
+# enabled = false
+# title = "ExampleSite"
+# subtitle = "This is subtitle"
+# imageUrl = "<img location>"
+# imageWidth = 120
+# imageHeight = 120
+# imageTitle = "my image"
+
+# [[params.profileMode.buttons]]
+# name = "Posts"
+# url = "posts"
+
+# [[params.profileMode.buttons]]
+# name = "Tags"
+# url = "tags"
+
+# [params.homeInfoParams]
+# Title = "Techobyte"
+# Content = "Another technology blog"
+
+[[params.socialIcons]]
+name = "twitter"
+url = "https://twitter.com/techobyte"
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/Techobytedigital"
+
+[params.cover]
+hidden = true
+hiddenInList = true
+hiddenInSingle = true
+
+[params.editPost]
+URL = "https://github.com/Techobytedigital/techobyte-blog/tree/main/site/content"
+Text = "Suggest Changes"
+appendFilePath = true
+
+## Search options
+[params.fuseOpts]
+isCaseSensitive = false
+shouldSort = true
+location = 0
+distance = 1_000
+threshold = 0.4
+minMatchCharLength = 0
+keys = ["title", "permalink", "summary", "content"]
 
 ## Codefence markup
 [markup]
@@ -46,3 +149,18 @@ identifier = "bits"
 name = "Bits"
 url = "/bits/"
 weight = 20
+
+## Search
+[[menu.main]]
+name = "🔎︎"
+url = "/search/"
+weight = 100
+
+## Archive
+# [[menu.main]]
+# name = "Archive"
+# url = "/archive/"
+# weight = 99
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
