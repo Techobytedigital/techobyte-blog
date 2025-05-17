@@ -7,7 +7,27 @@ categories: ["tutorial", "wsl"]
 description: ""
 author: ""
 featured: false
-toc: false
+showToc: true
+ToccOpen: false
+hidemeta: false
+comments: false
+disableShare: false
+hideSummary: false
+searchHidden: true
+ShowReadingTime: true
+ShowBreadCrumbs: true
+ShowPostNavLinks: true
+# cover:
+#     image: "<path/to/img>"
+#     alt: "alt text"
+#     caption: "caption text"
+#     ## Set to true when using page bundles
+#     relative: false
+#     hidden: true
+editPost:
+    URL: https://github.com/Techobytedigital/techobyte-blog/tree/main/site/content"
+    Text: "Suggest changes"
+    appendFilePath: true
 ---
 
 WSL has a feature that lets you backup your existing installations to a `.tar` file, which you can restore to create clones of an installation. You can, for instance, create a base image of a Debian installation with your user account and some applications you want available on every WSL instance you create from this image, like `wget`, `curl`, and `git`.
