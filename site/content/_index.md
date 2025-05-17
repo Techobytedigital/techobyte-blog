@@ -4,11 +4,11 @@ draft = false
 title = ''
 +++
 
-Welcome to Techcobyte, a blog about technology!
+Welcome to techobyte, a blog about technology!
 
-Techcobyte is a text-heavy blog built with [Hugo](https://gohugo.io). Find content like articles, guides & tutorials, code snippets, & more for topics like Linux, Windows, Docker, self-hosting, and other tech-centric topics.
+techobyte is a text-heavy blog built with [Hugo](https://gohugo.io). Find content like articles, guides & tutorials, code snippets, & more for topics like Linux, Windows, Docker, self-hosting, and other tech-centric topics.
 
-You can see the source for this site [on Github](https://github.com/redjax/techcobyte-blog).
+You can see the source for this site [on Github](https://github.com/redjax/techobyte-blog).
 
 ## Bits & Bytes
 

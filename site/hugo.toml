@@ -1,6 +1,6 @@
 baseURL = 'https://techobyte.cc/'
 languageCode = 'en-us'
-title = 'Techcobyte'
+title = 'Techobyte'
 
 theme = "PaperModX"
 
@@ -12,7 +12,9 @@ minifyOutput = true
 
 [params]
 # env = "production"
-title = "Techobyte"
+title = "techobyte blog"
+## Options: auto, light, dark
+defaultTheme = "auto"
 description = "Articles, guides, tips & tricks, for a range of technology topics."
 keywords = [
     "blog",
@@ -30,7 +32,6 @@ keywords = [
 ]
 author = "Techobyte Digital"
 DateFormat = "January 2, 2006"
-defaultTheme = "auto"
 disableThemeToggle = false
 ShowReadingTimee = true
 ShowShareButtons = true
@@ -96,6 +97,7 @@ URL = "https://github.com/Techobytedigital/techobyte-blog/tree/main/site/content
 Text = "Suggest Changes"
 appendFilePath = true
 
+## Search options
 [params.fuseOpts]
 isCaseSensitive = false
 shouldSort = true
@@ -147,3 +149,18 @@ identifier = "bits"
 name = "Bits"
 url = "/bits/"
 weight = 20
+
+## Search
+[[menu.main]]
+name = "🔎︎"
+url = "/search/"
+weight = 100
+
+## Archive
+# [[menu.main]]
+# name = "Archive"
+# url = "/archive/"
+# weight = 99
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
