@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "..",
+			"name": "Git Root"
+		},
+		{
+			"path": "../scripts/",
+			"name": "Scripts"
+		},
+		{
+			"path": "../containers/stacks/",
+			"name": "Compose Stacks"
+		},
+		{
+			"path": "../site",
+			"name": "Hugo site"
+		},
+		{
+			"path": "../site/content/bits/",
+			"name": "Bits (posts)"
+		},
+		{
+			"path": "../site/content/bytes/",
+			"name": "Bytes (tutorials)"
+		}
+	]
+}

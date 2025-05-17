@@ -1,0 +1,48 @@
+baseURL = 'https://techobyte.cc/'
+languageCode = 'en-us'
+title = 'Techcobyte'
+
+theme = "PaperMod"
+
+## Codefence markup
+[markup]
+[markup.highlight]
+anchorLineNos = true
+codeFences = true
+guessSyntax = false
+hl_Lines = ''
+hl_inline = false
+lineAnchors = ''
+lineNoStart = 1
+lineNos = true
+lineNumbersInTable = true
+noClasses = true
+## Options: https://gohugo.io/quick-reference/syntax-highlighting-styles/
+#  Generate styles with: hugo gen chromastyles --style=<chosen-style > static/css/syntax.css
+style = 'doom-one2'
+tabWidth = 4
+wrapperClass = 'highlight'
+
+## Navigation menu
+[menu]
+# Tutorials
+[[menu.main]]
+identifier = "bytes"
+name = "Bytes"
+url = "/bytes/"
+weight = 10
+
+# Tutorials/WSL
+[[menu.main]]
+identifier = "wsl"
+name = "WSL"
+url = "/bytes/wsl"
+parent = "bytes"
+weight = 2
+
+## Posts
+[[menu.main]]
+identifier = "bits"
+name = "Bits"
+url = "/bits/"
+weight = 20
