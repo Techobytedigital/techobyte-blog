@@ -1,5 +1,10 @@
 # Techcobyte Blog <!-- omit in toc -->
 
+![GitHub Created At](https://img.shields.io/github/created-at/Techobytedigital/techobyte-blog)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/y/Techobytedigital/techobyte-blog)
+![GitHub last commit](https://img.shields.io/github/last-commit/Techobytedigital/techobyte-blog)
+![GitHub repo size](https://img.shields.io/github/repo-size/Techobytedigital/techobyte-blog)
+
 Source code for the Techcobyte blog. Built with [Hugo](https://gohugo.io).
 
 ## Table of Contents <!-- omit in toc -->
